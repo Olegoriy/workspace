@@ -8,6 +8,8 @@
 html {
     position: relative;
     box-sizing: border-box;
+    margin-left: 130px;
+    margin-right: 130px;
 }
 
 *,
@@ -70,9 +72,7 @@ fieldset {
 }
 
 .container {
-    --width: 1180px;
-    --padding: 30px;
-    min-width: calc(var(--width) + var(--padding) * 2);
+    min-width: calc(1180px + 30px * 2);
     margin: 0 auto;
-    padding: 0 var(--padding);
+    padding: 0 30px; 
 }
