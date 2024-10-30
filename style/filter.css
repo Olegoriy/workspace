@@ -42,6 +42,16 @@
     gap: 10px;
 }
 
+.filter__label {
+    margin-bottom: 8px;
+
+}
+
+.filter__label:last-child {
+    margin-bottom: 0;
+    
+}
+
 .filter__input{
     flex: 1 1 50%;
     width: 100%;
