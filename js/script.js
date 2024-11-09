@@ -109,6 +109,12 @@ const renderModal = (data) => {
     modalMain.append(modalClose);
     modal.append(modalMain);
     document.body.append(modal);
+
+    modal.addEventListener('click', ({target}) => {
+        if (target === modal || target.closest('.modal__close')) {
+            modal.remove();
+        }
+    })
 }
 
 const openModal = (id) => {
@@ -117,8 +123,9 @@ const openModal = (id) => {
 }
 
 const init = () => {
+    
     const cardsList = document.querySelector('.cards__list');
-    // select
+    // select city
     const citySelect = document.querySelector('#city');
     const cityChoices = new Choices(citySelect, {
         itemSelectText: "",
@@ -150,9 +157,10 @@ const init = () => {
     } , renderError,
     );
 
+    // modal
+
     cardsList.addEventListener('click', ({target}) => {
         const vacancyCard = target.closest('.vacancy');
-        console.log(vacancyCard);
         if (vacancyCard) {
             const vacancyId = vacancyCard.dataset.id;
             openModal(vacancyId);
